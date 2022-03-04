@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <View
+        android:id="@+id/msg_annunciator"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="498dp"
+        android:background="@color/black_background"
+        app:layout_constraintEnd_toEndOf="@id/cduBackground"
+        app:layout_constraintStart_toStartOf="@id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground" />
+
+    <View
+        android:id="@+id/exec_annunciator"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="368dp"
+        android:background="@color/black_background"
+        app:layout_constraintEnd_toEndOf="@id/cduBackground"
+        app:layout_constraintStart_toStartOf="@id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground" />
+
+    <ImageView
+        android:id="@+id/cduBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/zibo_background1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <TextView
+        android:id="@+id/line0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    ZIBO FMC CONNECT    "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="   BY JAKUB BLASZCZAK   "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line0M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line1M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line2M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line3M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line4M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line5M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/magenta"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/line0G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line1G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line2G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line3G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line4G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line5G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/lineInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line0S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line1X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line2X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line3X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line4X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line5X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6LX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line1S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line2S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line3S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line4S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line5S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/line6S"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/networkStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground" />
+
+    <Button
+        android:id="@+id/fmcCpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPT"
+        app:layout_constraintStart_toStartOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        />
+    <Button
+        android:id="@+id/fmcFO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FO"
+        app:layout_constraintEnd_toEndOf="@+id/cduBackground"
+        app:layout_constraintTop_toTopOf="@+id/cduBackground"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

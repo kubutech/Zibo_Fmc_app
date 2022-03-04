@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+
+        <!-- Base application theme without action bar -->
+        <style name="AppTheme" parent="android:Theme.Holo.NoActionBar">
+            <!-- Customize your theme here. -->
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+            <item name="android:windowFullscreen">true</item>
+        </style>
+
+    </resources>
