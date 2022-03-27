@@ -33,8 +33,9 @@ class MainActivity : Activity()  {
 
         val sharedPref = getSharedPreferences("savedData",0)
 
-        if(sharedPref.contains("IP")) {
+        if(sharedPref.contains("IP") && sharedPref.contains("Settings")) {
             Networking.xplaneAddr = sharedPref.getString("IP","").toString()
+            Utilities.isNotificationActive = sharedPref.getString("Settings","").toBoolean()
         }
 
 
@@ -75,6 +76,7 @@ class MainActivity : Activity()  {
         val sharedPref = getSharedPreferences("savedData",0)
         val editor = sharedPref.edit()
         editor.putString("IP",Networking.xplaneAddr)
+        editor.putString("Settings",Utilities.isNotificationActive.toString())
         editor.commit()
     }
 
@@ -99,9 +101,15 @@ class MainActivity : Activity()  {
     private fun popupEnterHostname() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Enter X-Plane IP")
-        val input = EditText(this)
+        val alertLayout = layoutInflater.inflate(R.layout.alert_layout,null)
+        val input = alertLayout.findViewById<EditText>(R.id.textEdit)
         input.setText(Networking.xplaneAddr)
         input.inputType = InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+        val checkbox = alertLayout.findViewById<CheckBox>(R.id.checkbox)
+        checkbox.isChecked = Utilities.isNotificationActive
+        checkbox.setOnClickListener { v:View ->
+            Utilities.isNotificationActive = checkbox.isChecked
+        }
         builder.setPositiveButton("Confirm" ){ dialog, which -> Networking.xplaneAddr = input.text.toString() }
         builder.setNeutralButton("How to find X-plane IP?") {dialog, which ->
             val tutBuilder = AlertDialog.Builder(this)
@@ -113,7 +121,7 @@ class MainActivity : Activity()  {
             tutBuilder.setNeutralButton("Understood") {dialog, which->}
             tutBuilder.show()
         }
-        builder.setView(input)
+        builder.setView(alertLayout)
         builder.show()
     }
 

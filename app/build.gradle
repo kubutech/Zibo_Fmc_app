@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 30
 
 
     defaultConfig {
         applicationId "kuba.myprojects.zibo_fmc"
         minSdk 24
-        targetSdk 26
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 

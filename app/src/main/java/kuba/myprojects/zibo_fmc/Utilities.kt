@@ -46,7 +46,7 @@ object Utilities {
     val navpadL = arrayOf("1L", "2L", "3L", "4L", "5L", "6L")
     val navpadR = arrayOf("1R", "2R", "3R", "4R", "5R", "6R")
 
-
+    var isNotificationActive = false
 
     class Display(val activity: Activity) {
 
@@ -115,6 +115,8 @@ object Utilities {
         val execAnnunciator = getView(R.id.exec_annunciator)
 
         var isNotificationSent = false
+
+
 
         val buttonL = getButton(R.id.fmcCpt)
         val buttonR = getButton(R.id.fmcFO)
@@ -267,7 +269,7 @@ object Utilities {
                     msgAnnunciator.setBackgroundColor(if ( lines[lines.size - 1][0] == '1') {activity.getColor(R.color.annunciator_orange)} else {activity.getColor(R.color.black_background)})
 
                     val distance = lines[lines.size - 3].toInt()
-                    if (distance == 40 && !isNotificationSent) {
+                    if (distance == 40 && !isNotificationSent && isNotificationActive) {
 
                         val intent = Intent(activity, activity::class.java)
                         intent.action = Intent.ACTION_MAIN
@@ -279,7 +281,7 @@ object Utilities {
                         var builder = NotificationCompat.Builder(activity, "ID")
                             .setSmallIcon(R.drawable.icon)
                             .setContentTitle("Approaching Top Of Descent!")
-                            .setContentText("Descent should start in ${distance}NM")
+                            .setContentText("Descent will start in ${distance}NM")
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                             .setContentIntent(pendingIntent)
                             .setAutoCancel(true)
