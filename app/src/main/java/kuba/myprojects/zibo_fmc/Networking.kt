@@ -9,6 +9,7 @@ object Networking {
     var xplaneAddr = ""
     var fmcVersion:Int = 1
 
+    //Class for sending button press commands to simulator
     class UDPSender (val cmd: String,  val display: Utilities.Display) : Runnable {
 
         override fun run() {
@@ -30,6 +31,7 @@ object Networking {
     }
 
 
+    //Class for receiving display data from plugin running inside simulator
     class UDPReceiver(val display: Utilities.Display,val handler: android.os.Handler) {
 
 

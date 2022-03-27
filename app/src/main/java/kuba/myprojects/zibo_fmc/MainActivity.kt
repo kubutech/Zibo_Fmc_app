@@ -46,6 +46,7 @@ class MainActivity : Activity()  {
 
         handler.postDelayed(display.setDisplay,50)
 
+        //Listener listening for keyboard touch inputs
         display.background.setOnTouchListener { v, touch ->
             if(touch.action == MotionEvent.ACTION_UP) {
                 val x = touch.x * 1080 / (display.background.width.toFloat())
@@ -63,8 +64,9 @@ class MainActivity : Activity()  {
             return@setOnTouchListener true
         }
 
-        display.buttonR.setOnClickListener {v -> Networking.fmcVersion = 2}
-        display.buttonL.setOnClickListener {v -> Networking.fmcVersion = 1}
+        //Listeners for buttons that change fmc Version (Captain and First Pilot
+        display.buttonR.setOnClickListener { Networking.fmcVersion = 2}
+        display.buttonL.setOnClickListener { Networking.fmcVersion = 1}
 
 
         Thread(Networking.UDPReceiver(display, handler).getData).start()
@@ -98,6 +100,7 @@ class MainActivity : Activity()  {
         }
     }
 
+    //Popup for entering IP address
     private fun popupEnterHostname() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Enter X-Plane IP")

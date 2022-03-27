@@ -50,13 +50,13 @@ object Utilities {
 
     class Display(val activity: Activity) {
 
-        val statusDisplay = getTextView(R.id.networkStatus)
+        private val statusDisplay = getTextView(R.id.networkStatus)
         private var status = String()
 
 
-        val line6LX = getTextView(R.id.line6LX)
+        private val line6LX = getTextView(R.id.line6LX)
 
-        val linesMain = listOf<TextView>(
+        private val linesMain = listOf<TextView>(
             getTextView(R.id.line0),
             getTextView(R.id.line1),
             getTextView(R.id.line2),
@@ -67,7 +67,7 @@ object Utilities {
             getTextView(R.id.lineInput)
         )
 
-        val linesMainMagenta = listOf<TextView>(
+        private val linesMainMagenta = listOf<TextView>(
             getTextView(R.id.line0M),
             getTextView(R.id.line1M),
             getTextView(R.id.line2M),
@@ -78,7 +78,7 @@ object Utilities {
         )
 
 
-        val linesMainGreen = listOf<TextView>(
+        private val linesMainGreen = listOf<TextView>(
             getTextView(R.id.line0G),
             getTextView(R.id.line1G),
             getTextView(R.id.line2G),
@@ -89,7 +89,7 @@ object Utilities {
         )
 
 
-        val linesSmallLabel = listOf<TextView>(
+        private val linesSmallLabel = listOf<TextView>(
             getTextView(R.id.line0S),
             getTextView(R.id.line1X),
             getTextView(R.id.line2X),
@@ -99,7 +99,7 @@ object Utilities {
             getTextView(R.id.line6X))
 
 
-        val linesSmall = listOf<TextView>(
+        private val linesSmall = listOf<TextView>(
             getTextView(R.id.line1S),
             getTextView(R.id.line2S),
             getTextView(R.id.line3S),
@@ -111,8 +111,8 @@ object Utilities {
 
         val background = getImageView(R.id.cduBackground)
 
-        val msgAnnunciator = getView(R.id.msg_annunciator)
-        val execAnnunciator = getView(R.id.exec_annunciator)
+        private val msgAnnunciator = getView(R.id.msg_annunciator)
+        private val execAnnunciator = getView(R.id.exec_annunciator)
 
         var isNotificationSent = false
 
@@ -121,9 +121,9 @@ object Utilities {
         val buttonL = getButton(R.id.fmcCpt)
         val buttonR = getButton(R.id.fmcFO)
 
-        val letterSpacing = 0.17F
-        var letterSize = 53F
-        val scaleFactor = 0.779F
+        private val letterSpacing = 0.17F
+        private var letterSize = 53F
+        private val scaleFactor = 0.779F
 
         private var data: ByteArray = ByteArray(1024)
 
@@ -133,6 +133,8 @@ object Utilities {
             this.data = data
         }
 
+        //function that positions lines of display depending on device screen resolution
+        //All values are scaled relative to 1080p screen
         val setDisplay: Runnable = object : Runnable {
 
             override fun run() {
@@ -241,6 +243,7 @@ object Utilities {
         }
 
 
+        //Function for displaying received data on on the screen
         val refreshDisplay: Runnable = object : Runnable {
 
             override fun run() {
@@ -296,6 +299,8 @@ object Utilities {
             }
         }
 
+
+        //Function for displaying connection status
         val displayStatus: Runnable = object : Runnable {
 
             override fun run() {
@@ -308,19 +313,19 @@ object Utilities {
         }
 
 
-        fun getTextView(id: Int): TextView {
+        private fun getTextView(id: Int): TextView {
             return activity.findViewById(id)
         }
 
-        fun getImageView(id:Int): ImageView {
+        private fun getImageView(id:Int): ImageView {
             return activity.findViewById(id)
         }
 
-        fun getButton(id:Int): Button {
+        private fun getButton(id:Int): Button {
             return activity.findViewById(id)
         }
 
-        fun getView(id:Int): View {
+        private fun getView(id:Int): View {
             return activity.findViewById(id)
         }
 
@@ -332,8 +337,7 @@ object Utilities {
 
 
 
-
-
+//Function for finding button based on coordinates of touch action
     fun findKeyboardButton(x:Float, y:Float): String {
         if (x > 438 && x < 958 && y > 1192 && y < 1882) {
             val xKeypad = ((x - 438) / 104).toInt()
