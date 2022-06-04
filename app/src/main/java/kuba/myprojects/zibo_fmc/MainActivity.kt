@@ -42,6 +42,9 @@ class MainActivity : Activity()  {
 
         handler.postDelayed(display.setDisplay,50)
 
+        //Initializing UDPSender class objet used to send button press commands to simulator
+        val udpSender = Networking.UDPSender()
+
         //Listener listening for keyboard touch inputs
         display.background.setOnTouchListener { v, touch ->
             if(touch.action == MotionEvent.ACTION_UP) {
@@ -49,9 +52,7 @@ class MainActivity : Activity()  {
                 val y = touch.y * 1920 / (display.background.height.toFloat())
                 if (Utilities.findKeyboardButton(x,y) != "x") {
                     val cmd = "CMND\u0000laminar/B738/button/fmc${Networking.fmcVersion}_${Utilities.findKeyboardButton(x,y)}"
-                    val t = Thread(Networking.UDPSender(cmd,display))
-                    t.start()
-                    t.join()
+                    udpSender.sendButtonPress(cmd)
                 }
                 if (y < 156 && x > 180 && x < 900) {
                     popupEnterHostname()

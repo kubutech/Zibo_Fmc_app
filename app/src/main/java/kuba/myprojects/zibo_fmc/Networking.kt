@@ -4,6 +4,9 @@ import android.os.Looper
 import java.lang.Exception
 import java.net.*
 import android.system.Os.socket
+import java.io.IOException
+import android.system.Os.socket
+
 
 
 
@@ -15,27 +18,34 @@ object Networking {
 
 
     //Class for sending button press commands to simulator
-    class UDPSender (val cmd: String,  val display: Utilities.Display) : Runnable {
+    class UDPSender () {
 
-        init {
+        private var cmd: String = ""
+        private var sock: DatagramSocket = DatagramSocket()
 
+        private val sendCommand: Runnable = object: Runnable {
+            override fun run() {
+
+                val buf: ByteArray = cmd.toByteArray()
+                try {
+                    val sendPacket = DatagramPacket(
+                        buf,
+                        cmd.length,
+                        InetAddress.getByName(xplaneAddr),
+                        49000
+                    )
+                    sock.send(sendPacket)
+                } catch (e: Exception) {
+
+                }
+            }
         }
 
-        override fun run() {
-            var sock = DatagramSocket(8000)
-            val buf: ByteArray = cmd.toByteArray()
-            try {
-                val sendPacket = DatagramPacket(
-                    buf,
-                    cmd.length,
-                    InetAddress.getByName(xplaneAddr),
-                    49000
-                )
-                sock.send(sendPacket)
-            } catch (e: Exception) {
-
-            }
-            sock.close()
+        fun sendButtonPress(cmd:String) {
+            this.cmd = cmd
+            val t = Thread(this.sendCommand)
+            t.start()
+            t.join()
         }
     }
 
@@ -46,7 +56,7 @@ object Networking {
         val getData: Runnable = object : Runnable {
 
             override fun run() {
-                var sock = DatagramSocket(3000)
+                var sock = DatagramSocket()
                 sock.soTimeout = 100;
                 while (true) {
                     val msg = fmcVersion.toString()
@@ -84,8 +94,5 @@ object Networking {
         }
 
     }
-
-
-
 
 }
