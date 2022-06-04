@@ -25,14 +25,13 @@ class MainActivity : Activity()  {
         setContentView(R.layout.activity_main)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-
         val handler = Handler(Looper.getMainLooper())
 
-
+        //Looking for saved settings from previous sessions
         val sharedPref = getSharedPreferences("savedData",0)
 
         if(sharedPref.contains("IP") && sharedPref.contains("Settings")) {
-            //Networking.xplaneAddr = sharedPref.getString("IP","").toString()
+            Networking.xplaneAddr = sharedPref.getString("IP","").toString()
             Utilities.isNotificationActive = sharedPref.getString("Settings","").toBoolean()
         }
 
@@ -72,6 +71,7 @@ class MainActivity : Activity()  {
 
     override fun onStop() {
         super.onStop()
+        //saving settings from current session
         val sharedPref = getSharedPreferences("savedData",0)
         val editor = sharedPref.edit()
         editor.putString("IP",Networking.xplaneAddr)
