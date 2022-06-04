@@ -19,8 +19,6 @@ import androidx.core.app.NotificationManagerCompat
 
 class MainActivity : Activity()  {
 
-
-
     @SuppressLint("ClickableViewAccessibility", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +32,13 @@ class MainActivity : Activity()  {
         val sharedPref = getSharedPreferences("savedData",0)
 
         if(sharedPref.contains("IP") && sharedPref.contains("Settings")) {
-            Networking.xplaneAddr = sharedPref.getString("IP","").toString()
+            //Networking.xplaneAddr = sharedPref.getString("IP","").toString()
             Utilities.isNotificationActive = sharedPref.getString("Settings","").toBoolean()
         }
-
 
         createNotificationChannel()
 
         val display = Utilities.Display(this)
-
 
         handler.postDelayed(display.setDisplay,50)
 

@@ -20,8 +20,6 @@ import java.nio.ByteBuffer
 
 object Utilities {
 
-
-
     val keypad = arrayOf(
         arrayOf('A', 'B', 'C', 'D', 'E'),
         arrayOf('F', 'G', 'H', 'I', 'J'),

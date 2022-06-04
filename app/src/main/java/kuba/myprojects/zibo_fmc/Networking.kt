@@ -3,14 +3,23 @@ package kuba.myprojects.zibo_fmc
 import android.os.Looper
 import java.lang.Exception
 import java.net.*
+import android.system.Os.socket
+
+
+
 
 object Networking {
 
     var xplaneAddr = ""
     var fmcVersion:Int = 1
 
+
     //Class for sending button press commands to simulator
     class UDPSender (val cmd: String,  val display: Utilities.Display) : Runnable {
+
+        init {
+
+        }
 
         override fun run() {
             var sock = DatagramSocket(8000)
@@ -33,8 +42,6 @@ object Networking {
 
     //Class for receiving display data from plugin running inside simulator
     class UDPReceiver(val display: Utilities.Display,val handler: android.os.Handler) {
-
-
 
         val getData: Runnable = object : Runnable {
 
